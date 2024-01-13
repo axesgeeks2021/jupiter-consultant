@@ -4,12 +4,12 @@ import BlogContainer from '../component/BlogContainer';
 
 const fetchBlogs = async () => {
     try {
-        var requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-
-        const res = await fetch("http://www.sankalpitsolutions.com/jupiter/api/blog_list.php", requestOptions)
+        const res = await fetch("http://www.sankalpitsolutions.com/jupiter/api/blog_list.php", {
+            cache: 'no-store',
+            next: {
+                revalidate: 20,
+            }
+        })
         const data = await res.json()
         return data
 
@@ -20,7 +20,7 @@ const fetchBlogs = async () => {
 
 async function page() {
     const blogs = await fetchBlogs()
-
+    console.log('hekki', blogs)
     return (
         <section className="container-fluid" style={{position: 'relative'}}>
             <h1 style={{ textAlign: "center" }} className='my-3'>Trending Blogs</h1>
@@ -29,20 +29,5 @@ async function page() {
     )
 }
 
-// async function getServerSideProps() {
-//     try {
-//         var requestOptions = {
-//             method: 'GET',
-//             redirect: 'follow'
-//         };
-
-//         const res = await fetch("http://www.sankalpitsolutions.com/jupiter/api/blog_list.php", requestOptions)
-//         const data = await res.json()
-//         return {props: {data}}
-
-//     } catch (error) {
-//         console.log(error)
-//     }
-// }
 
 export default page

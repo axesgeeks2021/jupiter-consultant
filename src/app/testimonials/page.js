@@ -3,12 +3,12 @@ import TestimonialContainer from '../component/TestimonialContainer';
 
 const fetchTestimonial = async () => {
     try {
-        const requestOptions = {
-            method: 'GET',
-            redirect: 'follow'
-        };
-
-        const result = await fetch(`http://www.sankalpitsolutions.com/jupiter/api/testimonials.php?limit`, requestOptions)
+        const result = await fetch(`http://www.sankalpitsolutions.com/jupiter/api/testimonials.php?limit`, {
+            cache: 'no-store',
+            next: {
+                revalidate: 20,
+            }
+        })
         const data = await result.json()
         return data
     } catch (error) {
