@@ -2,7 +2,7 @@
 const nextConfig = {
     images: {
         domains: ["www.sankalpitsolutions.com"]
-    }
+    },
 }
 
 module.exports = nextConfig
