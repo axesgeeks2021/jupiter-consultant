@@ -13,6 +13,15 @@ body {
     padding: 0;
     box-sizing: border-box;
 }
+.section4marquee ul{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+/* .section4marquee ul li{
+    margin: 0 20px;
+} */
 header {
     width: 100%;
     overflow: hidden;

@@ -152,7 +152,7 @@ function Header() {
                         src="/logoc.png" width={1000} height={100} /></Link>
                 </div>
                 <div className='address'>
-                    <p style={{ color: '#909090', fontSize: '17px' }}>S.C.O 64–65 First Floor, Sector 17A Sector 17, Chandigarh,160017</p>
+                    <p style={{ color: '#909090', fontSize: '17px' }}>S.C.O 64–65 First Floor, Sector 17A, Chandigarh,160017</p>
                     <div className='header__address__anchor' >
                         <a href='tel:+919464280970' style={{ color: '#909090', textDecoration: 'none', fontSize: '16px' }}>+91 9464280970</a>
                         <a href='tel:+919143333305' style={{ color: '#909090', textDecoration: 'none', fontSize: '16px' }}>+91 9143333305</a>
